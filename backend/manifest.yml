@@ -5,8 +5,7 @@ metadata:
  namespace: expense
 data:
   DB_HOST: mysql
-
-
+----
 kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -29,7 +28,6 @@ spec:
         component: backend
         project: expense
         tier: app
-        
     spec:
       containers:
       - name: backend
@@ -37,8 +35,7 @@ spec:
         envFrom:
         - configMapRef:
             name: backend
-
-
+---
 apiVersion: v1
 kind: Service
 metadata:
